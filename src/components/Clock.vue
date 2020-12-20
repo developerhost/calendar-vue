@@ -44,14 +44,14 @@ export default {
       return zeroPadding(this.date.getSeconds(), 2)
     },
   },
+  mounted() {
+    this.setDate()
+      setInterval(() => this.setDate(), 1000)
+    },
   methods: {
     setDate() {
       this.date = new Date()
       this.date.setHours(this.date.getHours() + this.diff) //追加
-    },
-  mounted() {
-    this.setDate()
-      setinterval(() => this.setDate(), 1000)
     },
   },
   }
